@@ -1,0 +1,189 @@
+.qHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+  background-color: white;
+  width: 100%;
+
+  position: sticky;
+  z-index: 1000;
+  top: 0;
+  box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.5);
+}
+
+.qHeader__logo > img {
+  height: 30px;
+  margin-right: 20px;
+}
+
+.qHeader__icons {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.qHeader__icons > .active > .MuiSvgIcon-root {
+  fill: #8f1f1b;
+}
+
+.qHeader__icon > .MuiSvgIcon-root {
+  font-size: xx-large;
+  background-color: white;
+  padding: 5px 20px;
+  color: gray;
+}
+
+.qHeader__icon > .MuiSvgIcon-root:hover {
+  background-color: rgba(233, 233, 233, 0.5);
+  border-radius: 10px;
+  color: #b92b27;
+}
+
+.qHeader__input {
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgray;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+.qHeader__input > input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: rgb(49, 49, 49);
+}
+
+.qHeader__input > .MuiSvgIcon-root {
+  color: gray;
+}
+
+.qHeader__avatar {
+  cursor: pointer;
+}
+.qHeader__Rem {
+  display: flex;
+  align-items: center;
+  margin-left: 25px;
+}
+
+.qHeader__Rem > .MuiSvgIcon-root {
+  font-size: xx-large;
+  color: gray;
+  margin-left: 25px;
+  cursor: pointer;
+}
+.qHeader__Rem > .MuiSvgIcon-root:hover {
+  color: #b92b27;
+}
+
+.qHeader__Rem > .MuiButton-root {
+  color: white;
+  background: #b92b27;
+  text-transform: inherit;
+  border-radius: 20px;
+  margin-left: 25px;
+}
+
+.qHeader__Rem > .MuiButton-root:hover {
+  color: #ffffff;
+  background: #8f1f1b;
+}
+
+.modal__title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  border-bottom: 1px solid rgba(187, 187, 187, 0.5);
+}
+
+.modal__title > h5 {
+  color: gray;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-right: 30px;
+}
+
+.modal__title > h5:hover {
+  color: #b92b27;
+}
+
+.modal__info {
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.modal__info > p {
+  margin-left: 10px;
+  font-size: small;
+  color: gray;
+}
+
+.modal__info > .modal__scope {
+  display: flex;
+  align-items: center;
+  color: rgb(98, 98, 98);
+  padding: 5px;
+  margin-left: 10px;
+  background-color: rgb(230, 230, 230);
+  border-radius: 33px;
+  cursor: pointer;
+}
+
+.modal__Field {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  flex: 1;
+}
+
+.modal__Field > .modal__fieldLink {
+  color: gray;
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+}
+
+.modal__Field > .modal__fieldLink > input {
+  flex: 1;
+  border: none;
+  outline: none;
+  margin-left: 5px;
+}
+
+.modal__buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 260px;
+  margin-right: -20px;
+  border-top: 1px solid lightgray;
+}
+
+.modal__buttons > .cancle {
+  margin-left: auto;
+  border: none;
+  margin-top: 5px;
+  outline: none;
+  color: gray;
+  font-weight: 500;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 33px;
+  cursor: pointer;
+}
+.modal__buttons > .add {
+  border: none;
+  outline: none;
+  margin-top: 5px;
+  background-color: rgb(0, 64, 255);
+  color: white;
+  font-weight: 700;
+  padding: 10px;
+  margin-right: 10px;
+  border-radius: 33px;
+  cursor: pointer;
+}
