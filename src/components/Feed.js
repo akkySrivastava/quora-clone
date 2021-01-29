@@ -26,7 +26,7 @@ function Feed() {
       {posts.map(({ id, questions }) => (
         <Post
           key={id}
-          id={id}
+          Id={id}
           question={questions.question}
           imageUrl={questions.imageUrl}
           timestamp={questions.timestamp}

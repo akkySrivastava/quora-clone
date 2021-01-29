@@ -24,17 +24,20 @@ function QHeader() {
   const [IsmodalOpen, setIsModalOpen] = useState(false);
   const [input, setInput] = useState("");
   const [inputUrl, setInputUrl] = useState("");
+  const questionName = input;
 
   const handleQuestion = (e) => {
     e.preventDefault();
     setIsModalOpen(false);
 
-    db.collection("questions").add({
-      user: user,
-      question: input,
-      imageUrl: inputUrl,
-      timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    if (questionName) {
+      db.collection("questions").add({
+        user: user,
+        question: input,
+        imageUrl: inputUrl,
+        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      });
+    }
 
     setInput("");
     setInputUrl("");
@@ -91,7 +94,7 @@ function QHeader() {
             overlay: {
               width: 700,
               height: 600,
-              backgroundColor: "inherit",
+              backgroundColor: "rgba(0,0,0,0.8)",
               zIndex: "1000",
               top: "50%",
               left: "50%",
