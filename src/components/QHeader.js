@@ -27,10 +27,13 @@ function QHeader() {
   const questionName = input;
 
   const handleQuestion = (e) => {
+
+
     e.preventDefault();
     setIsModalOpen(false);
 
     if (questionName) {
+      console.log(questionName);
       db.collection("content").add({
         user: user,
         question: input,
@@ -70,7 +73,7 @@ function QHeader() {
       </div>
       <div className="qHeader__input">
         <SearchIcon />
-        <input type="text" placeholder="Search Quora" />
+        <input type="text" placeholder="Search" />
       </div>
       <div className="qHeader__Rem">
         <div className="qHeader__avatar">

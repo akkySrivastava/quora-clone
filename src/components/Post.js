@@ -24,7 +24,7 @@ function Post({ Id, question, imageUrl, timestamp, users }) {
 
   useEffect(() => {
     if (questionId) {
-      db.collection("questions")
+      db.collection("conent")
         .doc(questionId)
         .collection("answer")
         .orderBy("timestamp", "desc")
@@ -40,7 +40,7 @@ function Post({ Id, question, imageUrl, timestamp, users }) {
     e.preventDefault();
 
     if (questionId) {
-      db.collection("questions").doc(questionId).collection("answer").add({
+      db.collection("content").doc(questionId).collection("answer").add({
         user: user,
         answer: answer,
         questionId: questionId,

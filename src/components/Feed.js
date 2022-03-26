@@ -8,7 +8,7 @@ function Feed() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    db.collection("questions")
+    db.collection("content")
       .orderBy("timestamp", "desc")
       .onSnapshot((snapshot) =>
         setPosts(
