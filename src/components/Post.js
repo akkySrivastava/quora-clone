@@ -24,7 +24,7 @@ function Post({ Id, question, imageUrl, timestamp, users }) {
 
   useEffect(() => {
     if (questionId) {
-      db.collection("conent")
+      db.collection("content")
         .doc(questionId)
         .collection("answer")
         .orderBy("timestamp", "desc")
