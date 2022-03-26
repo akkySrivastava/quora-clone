@@ -7,34 +7,18 @@ function SidebarOptions() {
     <div className="sidebarOptions">
       <div className="sidebarOption">
         <img
-          src="https://media.istockphoto.com/vectors/music-note-icon-vector-illustration-vector-id1175435360?k=20&m=1175435360&s=612x612&w=0&h=1yoTgUwobvdFlNxUQtB7_NnWOUD83XOMZHvxUzkOJJs="
+          src="https://pyxis.nymag.com/v1/imgs/160/7b8/be9b71674a92129013428120b1a0c699b7-howtogetintodrawing.rsquare.w700.jpg"
           alt=""
         />
-        <p>Musicians</p>
+        <p>Drawing</p>
       </div>
 
       <div className="sidebarOption">
         <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-858-100-VnZbEVtOIGkEHXlnYId9slumV59IPgkA.jpeg"
+          src="https://cdn.shopify.com/s/files/1/2398/2457/t/19/assets/pf-9170c22c--DSC06111.jpg?v=1615866938"
           alt=""
         />
-
-        <p>Business</p>
-      </div>
-      <div className="sidebarOption">
-        <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-1913-100-B8JrwaVauFzsaTSqXDqoWLCXzQb2mTE9.jpeg"
-          alt=""
-        />
-        <p>Psychology</p>
-      </div>
-
-      <div className="sidebarOption">
-        <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-877-100-e7jKHEQr0HExAIA9rlsyHlV6HJyRruEo.jpeg"
-          alt=""
-        />
-        <p>Cooking</p>
+        <p>Painting</p>
       </div>
 
       <div className="sidebarOption">
@@ -47,47 +31,36 @@ function SidebarOptions() {
 
       <div className="sidebarOption">
         <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-931-100-c8WCPwZ9qPsh5zLGQ5wHh1ddxtc9Cch7.jpeg"
+          src="http://www.inquiriesjournal.com/imgs/1200x1200/crop/article-images/uid-170-1059163527-2886/92192b.jpg"
           alt=""
         />
-        <p>Science</p>
+        <p>Filmmaking</p>
       </div>
 
       <div className="sidebarOption">
         <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-1140-100-24q3tiv4WhPssc5TGwf0mvCM5aiqGVXW.jpeg"
+          src="https://marcolearning.com/wp-content/uploads/2022/02/different-kinds-of-writing-styles.jpg"
           alt=""
         />
-        <p>Health</p>
+        <p>Writing</p>
       </div>
 
       <div className="sidebarOption">
         <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-843-100-W7FzODceTO2aQmp8D7E4rKZ8YgSv21eR.jpeg"
+          src="https://www.thesprucecrafts.com/thmb/eZc0kzin-wIqynkBVzsXs0qZXsY=/3064x3064/smart/filters:no_upscale()/close-up-of-man-photographing-through-dslr-736206565-59a8bd2b054ad90010f15275.jpg"
           alt=""
         />
-        <p>Movies</p>
+        <p>Photography</p>
       </div>
 
       <div className="sidebarOption">
         <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-2177-100-JiR07D1TQSfeQzRvWXomVaY4Poj2f8Yb.jpeg"
+          src="https://ae01.alicdn.com/kf/Hf6c82e56a241413d855d8d59053e78e5e/Pottery-Tools-Cutting-Knife-Sculpture-Carving-Craft-Supplies-Clay-Cutters-Ceramic-DIY-Design-Sculpting-Trimming-Modelling.jpg_Q90.jpg_.webp"
           alt=""
         />
-        <p>Technology</p>
+        <p>Sculpting</p>
       </div>
 
-      <div className="sidebarOption">
-        <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-996-100-bfZBQjeEenKKl8fcNY4tVv0FyArtB0Mb.jpeg"
-          alt=""
-        />
-        <p>Education</p>
-      </div>
-      <div className="sidebarOption">
-        <Add />
-        <p className="text">Discover Spaces</p>
-      </div>
     </div>
   );
 }
