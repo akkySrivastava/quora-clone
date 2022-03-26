@@ -31,7 +31,7 @@ function QHeader() {
     setIsModalOpen(false);
 
     if (questionName) {
-      db.collection("questions").add({
+      db.collection("content").add({
         user: user,
         question: input,
         imageUrl: inputUrl,
@@ -85,7 +85,7 @@ function QHeader() {
           />
         </div>
         <LanguageIcon />
-        <Button onClick={() => setIsModalOpen(true)}>Add Question</Button>
+        <Button onClick={() => setIsModalOpen(true)}>Post Content</Button>
         <Modal
           isOpen={IsmodalOpen}
           onRequestClose={() => setIsModalOpen(false)}

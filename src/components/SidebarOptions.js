@@ -7,10 +7,10 @@ function SidebarOptions() {
     <div className="sidebarOptions">
       <div className="sidebarOption">
         <img
-          src="https://qphs.fs.quoracdn.net/main-thumb-t-930-100-cbbsbwijdhpyzlpipejvqpiijhhoaday.jpeg"
+          src="https://media.istockphoto.com/vectors/music-note-icon-vector-illustration-vector-id1175435360?k=20&m=1175435360&s=612x612&w=0&h=1yoTgUwobvdFlNxUQtB7_NnWOUD83XOMZHvxUzkOJJs="
           alt=""
         />
-        <p>History</p>
+        <p>Musicians</p>
       </div>
 
       <div className="sidebarOption">
