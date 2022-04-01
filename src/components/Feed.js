@@ -17,7 +17,7 @@ function Feed() {
             questions: doc.data(),
           }))
         )
-      );
+    ); 
   }, []);
 
   return (
@@ -27,6 +27,7 @@ function Feed() {
         <Post
           key={id}
           Id={id}
+          tag={questions.tag}
           question={questions.question}
           imageUrl={questions.imageUrl}
           timestamp={questions.timestamp}

@@ -24,6 +24,7 @@ function QHeader() {
   const [IsmodalOpen, setIsModalOpen] = useState(false);
   const [input, setInput] = useState("");
   const [inputUrl, setInputUrl] = useState("");
+  const [inputTag, setInputTag] = useState("");
   const questionName = input;
 
   const handleQuestion = (e) => {
@@ -37,6 +38,7 @@ function QHeader() {
       db.collection("content").add({
         user: user,
         question: input,
+        tag: inputTag,
         imageUrl: inputUrl,
         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
       });
@@ -44,6 +46,7 @@ function QHeader() {
 
     setInput("");
     setInputUrl("");
+    setInputTag("");
   };
 
   return (
@@ -144,6 +147,12 @@ function QHeader() {
             </div>
           </div>
           <div className="modal__buttons">
+            <select name="Categories" id="selectList" onChange={(e) => setInputTag(e.target.value)}>
+              <option value="Visual Arts">Visual Arts</option>
+              <option value="Writing">Writing</option>
+              <option value="Film">Film</option>
+              <option value="Music">Music</option>
+            </select>
             <button className="cancle" onClick={() => setIsModalOpen(false)}>
               Cancel
             </button>
