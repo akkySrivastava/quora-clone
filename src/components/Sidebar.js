@@ -2,7 +2,7 @@ import React from "react";
 import SidebarOptions from "./SidebarOptions";
 import "./Sidebar.css";
 
-function Sidebar() {
+function Sidebar({ updateFilter }) {
   return (
     <div className="sidebar">
       <SidebarOptions />

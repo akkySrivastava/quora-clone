@@ -10,6 +10,11 @@
   border-bottom: 1px solid lightgray;
 }
 
+.widget__content:hover {
+  background: rgb(230, 182, 182);
+  border-radius: 5px;
+}
+
 .widget__content > img {
   height: 30px;
   border-radius: 5px;
