@@ -13,6 +13,7 @@
   background: rgb(211, 211, 211);
   border-radius: 5px;
 }
+
 .sidebarOption > img {
   height: 40px;
   border-radius: 5px;
@@ -23,6 +24,7 @@
   font-size: medium;
   margin-left: 20px;
 }
+
 .sidebarOption > p {
   margin-left: 10px;
   color: gray;

@@ -68,7 +68,7 @@ function Post({ Id, tag, question, imageUrl, timestamp, users }) {
           src={
             users.photo
               ? users.photo
-              : "https://images-platform.99static.com//_QXV_u2KU7-ihGjWZVHQb5d-yVM=/238x1326:821x1909/fit-in/500x500/99designs-contests-attachments/119/119362/attachment_119362573"
+              : "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_250,q_auto:good,w_250/v1/gcs/platform-data-twilio/contentbuilder/Avatar.png"
           }
         />
         <h4>{users.displayName ? users.displayName : users.email}</h4>
