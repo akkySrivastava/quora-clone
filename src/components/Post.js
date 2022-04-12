@@ -171,11 +171,9 @@ function Post({ Id, tag, question, imageUrl, timestamp, users }) {
           <ArrowDownwardOutlinedIcon />
         </div>
 
-        <RepeatOutlinedIcon />
         <ChatBubbleOutlineOutlinedIcon />
         <p className="tag">{tag}</p>
         <div className="post__footerLeft">
-          <ShareOutlined />
           <MoreHorizOutlined />
         </div>
       </div>
