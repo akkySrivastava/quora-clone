@@ -40,17 +40,9 @@ function Login() {
     <div className="login">
       <div className="login__container">
         <div className="login__logo">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Quora_logo_2015.svg/250px-Quora_logo_2015.svg.png"
-            alt=""
-          />
         </div>
         <div className="login__desc">
-          <p>A Place to Share knowledge and better understand the world</p>
-          <p style={{ color: "royalblue", fontSize: "25px" }}>
-            HandCrafted with ❤️ by{" "}
-          </p>
-          <h3>Code With Akky</h3>
+          <h3>Sorin Login</h3>
         </div>
         <div className="login__auth">
           <div className="login__authOptions">
@@ -70,27 +62,10 @@ function Login() {
               />
               <span>Continue With Facebook</span>
             </div>
-            <div className="login__authDesc">
-              <p>
-                <span style={{ color: "blue", cursor: "pointer" }}>
-                  Sign Up With Email
-                </span>
-                . By continuing you indicate that you have read and agree to
-                Quora's
-                <span style={{ color: "blue", cursor: "pointer" }}>
-                  Terms of Service{" "}
-                </span>
-                and{" "}
-                <span style={{ color: "blue", cursor: "pointer" }}>
-                  Privacy Policy
-                </span>
-                .
-              </p>
-            </div>
-          </div>
-          <div className="login__emailPass">
+          {/* </div>
+          <div className="login__emailPass"> */}
             <div className="login__label">
-              <h4>Login</h4>
+              <h3>Login</h3>
             </div>
             <div className="login__inputFields">
               <div className="login__inputField">
@@ -103,7 +78,7 @@ function Login() {
               </div>
               <div className="login__inputField">
                 <input
-                  value={password}
+                  valuex={password}
                   onChange={(e) => setPassword(e.target.value)}
                   type="password"
                   placeholder="Password"
@@ -112,24 +87,43 @@ function Login() {
             </div>
             <div className="login__forgButt">
               <small>Forgot Password?</small>
+            </div>
+            <div className="login_button">
               <button onClick={handleSignIn}>Login</button>
             </div>
-            <button onClick={registerSignIn}>Register</button>
+            <div className="signup_button">
+              <button onClick={registerSignIn}>Register</button>
+            </div>
           </div>
         </div>
+        <div className="login__authDesc">
+              <p>
+                <span style={{ color: "blue", cursor: "pointer" }}>
+                  Sign Up With Email
+                </span>
+                . By continuing you indicate that you have read and agree to
+                Sorin's {" "}
+                <span style={{ color: "blue", cursor: "pointer" }}>
+                  Terms of Service{" "}
+                </span>
+                and{" "}
+                <span style={{ color: "blue", cursor: "pointer" }}>
+                  Privacy Policy
+                </span>
+                .
+              </p>
+            </div>
         <div className="login__lang">
-          <p>हिन्दी</p>
+          {/* <ArrowBackwardIosIcon fontSize="small" /> */}
+          <p>Help</p>
           <ArrowForwardIosIcon fontSize="small" />
         </div>
         <div className="login__footer">
           <p>About</p>
-          <p>Languages</p>
-          <p>Careers</p>
-          <p>Businesses</p>
           <p>Privacy</p>
           <p>Terms</p>
           <p>Contact</p>
-          <p>&copy; Quora Fake Inc. 2021</p>
+          <p>&copy; Sorin 2021</p>
         </div>
       </div>
     </div>
