@@ -115,11 +115,30 @@
 
 .login__inputField > input {
   padding: 0px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  height: 25px;
   width: 100%;
   outline: none;
   border: none;
   background-color: rgb(236, 236, 236);
-  height:15px;
+  font-size:10pt;
+}
+
+.login__inputField_pass {
+  margin-top: 0px;
+  margin-bottom: 15px;
+  height: 15px;
+}
+.login__inputField_pass > input {
+  padding: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 25px;
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: rgb(236, 236, 236);
   font-size:10pt;
 }
 
@@ -129,6 +148,7 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 3px;
+  margin-bottom: 5px;
 }
 
 .login__forgButt > small {
@@ -177,6 +197,7 @@
 
 .signup_button > button {
   padding: 9px;
+  margin-bottom: 0px; 
   border: none;
   width: 100%;
   outline: none;
@@ -195,30 +216,13 @@
   background-color: rgb(226, 226, 226);
 }
 
-.login__emailPass > button {
-  padding: 0px;
-  border-radius: 5px;
-  border: none;
-  outline: none;
-  background-color: rgb(67, 67, 78);
-  color: white;
-  font-weight: bold;
-  font-size: 15px;
-  cursor: pointer;
-  margin-top: 10px;
-}
-
-.login__emailPass > button:hover {
-  color: white;
-  background-color: #2b60d3;
-}
-
 .login__authDesc {
   display: flex;
   align-items: center;
   padding: 20px;
   margin-bottom: 0px;
   margin-left: 90px;
+  margin-top: 0px;
   width: 45%;
 
 }
