@@ -53,8 +53,8 @@ function QHeader() {
     <div className="qHeader">
       <div className="qHeader__logo">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Quora_logo_2015.svg/250px-Quora_logo_2015.svg.png"
-          alt=""
+          src="http://localhost:3000/TempSorinLogo.png"
+          alt="LogoNotFound"
         />
       </div>
       <div className="qHeader__icons">
