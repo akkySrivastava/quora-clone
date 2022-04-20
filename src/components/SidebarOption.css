@@ -10,8 +10,8 @@
 }
 
 .sidebarOption:hover {
-  background: rgb(230, 182, 182);
   border-radius: 5px;
+  background-color: white;
 }
 
 .sidebarOption > img {

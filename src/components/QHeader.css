@@ -4,6 +4,7 @@
   align-items: center;
   padding: 1px;
   background-color: white;
+  background-image: url(http://localhost:3000/header_background.png);
   width: 100%;
 
   position: sticky;
@@ -15,6 +16,7 @@
 .qHeader__logo > img {
   height: 30px;
   margin-right: 20px;
+  background-color: transparent;
 }
 
 .qHeader__icons {
@@ -29,13 +31,12 @@
 
 .qHeader__icon > .MuiSvgIcon-root {
   font-size: xx-large;
-  background-color: white;
   padding: 5px 20px;
   color: gray;
 }
 
 .qHeader__icon > .MuiSvgIcon-root:hover {
-  background-color: rgba(233, 233, 233, 0.5);
+  background-color: white;
   border-radius: 10px;
   color: #b92b27;
 }

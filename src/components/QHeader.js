@@ -53,7 +53,7 @@ function QHeader() {
     <div className="qHeader">
       <div className="qHeader__logo">
         <img
-          src="http://localhost:3000/TempSorinLogo.png"
+          src="http://localhost:3000/sorin_logo.png"
           alt="LogoNotFound"
         />
       </div>
