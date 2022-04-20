@@ -1,7 +1,20 @@
 .sidebarOptions {
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  margin-right: 0px;
+  height: 100%;
+  width: 15%;
+  top: 60px;
+  padding-top: 20px;
+  background-attachment: fixed;
+  position: fixed;
+  background-image: url(http://localhost:3000/sidebar_background.png);
+  background-size: 17%;
+  background-attachment: fixed;
+  position: fixed;
 }
+
 .sidebarOption {
   display: flex;
   align-items: center;
@@ -27,14 +40,14 @@
 
 .sidebarOption > p {
   margin-left: 10px;
-  color: gray;
+  color: darkslategray;
   font-weight: 400;
   font-size: 13px;
 }
 
 .sidebarOption > .text {
   margin-left: 23px;
-  color: gray;
+  color: darkslategray;
   font-weight: 400;
   font-size: 13px;
 }

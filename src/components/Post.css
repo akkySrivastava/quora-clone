@@ -4,9 +4,14 @@
   padding: 10px;
   background-color: white;
   margin-top: 10px;
-  border: 1px solid lightgray;
   border-radius: 5px;
   box-shadow: 0px 5px 8px -9px solid rgab(0, 0, 0, 0.5);
+  background-color: rgb(240, 240, 240);
+  border: 0.5px solid rgb(175, 175, 175);
+}
+
+.post:hover {
+  border: 1px solid rgb(175, 175, 175);
 }
 
 .post__info {
@@ -19,6 +24,7 @@
   cursor: pointer;
   font-size: 13px;
 }
+
 .post__info > h4:hover {
   text-decoration: underline;
 }
@@ -101,6 +107,7 @@
   justify-content: space-around;
   border-radius: 33px;
 }
+
 .post__footerAction > .MuiSvgIcon-root {
   color: gray;
   margin-right: 40px;

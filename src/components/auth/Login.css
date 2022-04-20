@@ -5,8 +5,8 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: url(https://wallpaperaccess.com/full/3095478.jpg);
-  background-size: contain;
+  background: url(http://localhost:3000/pixel_background.png);
+  background-size: cover;
 }
 
 .login__container {

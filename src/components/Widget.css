@@ -5,17 +5,14 @@
   flex-direction: column;
   padding: 10px;
   margin-right: 20px;
-  border: 1px solid lightgray;
   border-radius: 5px;
   max-height: 85vh;
-  background-color: white;
-}
-
-.widget__header {
-  border-bottom: 1px solid lightgray;
+  background-image: url(http://localhost:3000/top_posts_background.png);
+  background-size: cover;
 }
 
 .widget__header > h5 {
+  text-align: center;
   padding: 10px;
   color: rgb(41, 25, 27);
   font-size: 15px;
