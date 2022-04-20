@@ -73,7 +73,7 @@ function Login() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   type="text"
-                  placeholder=" Email"
+                  placeholder="Email"
                 />
               </div>
               <div className="login__inputField_pass">
@@ -81,7 +81,7 @@ function Login() {
                   valuex={password}
                   onChange={(e) => setPassword(e.target.value)}
                   type="password"
-                  placeholder=" Password"
+                  placeholder="Password"
                 />
               </div>
             </div>
