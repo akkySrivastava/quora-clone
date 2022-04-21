@@ -35,7 +35,8 @@ function Feed() {
               Id={id}
               tag={questions.tag}
               question={questions.question}
-              imageUrl={questions.imageUrl}
+              content={questions.content}
+              imageUrl={questions.image}
               timestamp={questions.timestamp}
               users={questions.user} 
           /> : null

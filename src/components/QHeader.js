@@ -13,6 +13,7 @@ import { Avatar, Button, Input } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import db, { auth } from "../firebase";
+import { storage } from "../firebase";
 import { ExpandMore, Link } from "@material-ui/icons";
 import firebase from "firebase";
 
@@ -25,28 +26,54 @@ function QHeader() {
   const [input, setInput] = useState("");
   const [inputUrl, setInputUrl] = useState("");
   const [inputTag, setInputTag] = useState("");
+  const [inputContent, setInputContent] = useState("");
+  const [image , setImage] = useState(null);
+  const uploadedImage = React.useRef(null);
+
   const questionName = input;
 
-  const handleQuestion = (e) => {
-
+  const handleQuestion = async (e) => {
 
     e.preventDefault();
     setIsModalOpen(false);
 
-    if (questionName) {
-      console.log(questionName);
-      db.collection("content").add({
-        user: user,
-        question: input,
-        tag: inputTag,
-        imageUrl: inputUrl,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      });
+    if(image != null) {
+  
+        const storageRef = storage.ref();
+        const imageRef = storageRef.child(image.name);
+        await imageRef.put(image);
+
+      
+        db.collection("content").add({
+          user: user,
+          question: input,
+          tag: inputTag,
+          content: inputContent,
+          image: await imageRef.getDownloadURL(),
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        });
+            
+
+    } else {
+      if (questionName) {
+        db.collection("content").add({
+          user: user,
+          question: input,
+          tag: inputTag,
+          content: inputContent,
+          image: null,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        });
+      }
+  
     }
+
 
     setInput("");
     setInputUrl("");
     setInputTag("");
+    setInputContent("");
+    setImage(null);
   };
 
   return (
@@ -91,7 +118,7 @@ function QHeader() {
           />
         </div>
         <LanguageIcon />
-        <Button onClick={() => setIsModalOpen(true)}>Post Content</Button>
+        <Button className="post_button" onClick={() => setIsModalOpen(true)}>Post Content</Button>
         <Modal
           isOpen={IsmodalOpen}
           onRequestClose={() => setIsModalOpen(false)}
@@ -134,16 +161,10 @@ function QHeader() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               type="text"
-              placeholder="Start your question with 'What', 'How', 'Why', etc. "
+              placeholder="Title your progress"
             />
             <div className="modal__fieldLink">
-              <Link />
-              <input
-                value={inputUrl}
-                onChange={(e) => setInputUrl(e.target.value)}
-                type="text"
-                placeholder="Optional: inclue a link that gives context"
-              ></input>
+              <textarea id="progress" rows="15" onChange={(e) => setInputContent(e.target.value)}></textarea>
             </div>
           </div>
           <div className="modal__buttons">
@@ -153,6 +174,7 @@ function QHeader() {
               <option value="Film">Film</option>
               <option value="Music">Music</option>
             </select>
+            <input type="file" accept="image/*" multiple = {false} onChange={(e) => setImage(e.target.files[0])} />
             <button className="cancle" onClick={() => setIsModalOpen(false)}>
               Cancel
             </button>
@@ -160,7 +182,16 @@ function QHeader() {
               Add Question
             </button>
           </div>
+          <img
+          ref={uploadedImage}
+          style={{
+            width: "100%",
+            height: "100%",
+            position: "absolute"
+          }}
+        />
         </Modal>
+
       </div>
     </div>
   );

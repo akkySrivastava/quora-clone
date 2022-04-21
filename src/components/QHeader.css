@@ -1,12 +1,12 @@
+
 .qHeader {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 1px;
   background-color: white;
-  background-image: url(http://localhost:3000/header_background.png);
   width: 100%;
-  height: 60px;
+
   position: sticky;
   z-index: 1000;
   top: 0;
@@ -16,7 +16,6 @@
 .qHeader__logo > img {
   height: 30px;
   margin-right: 20px;
-  background-color: transparent;
 }
 
 .qHeader__icons {
@@ -26,19 +25,20 @@
 }
 
 .qHeader__icons > .active > .MuiSvgIcon-root {
-  fill: #8f1f1b;
+  fill: #2d57d6;
 }
 
 .qHeader__icon > .MuiSvgIcon-root {
   font-size: xx-large;
+  background-color: white;
   padding: 5px 20px;
   color: gray;
 }
 
 .qHeader__icon > .MuiSvgIcon-root:hover {
-  background-color: white;
+  background-color: rgba(233, 233, 233, 0.5);
   border-radius: 10px;
-  color: #b92b27;
+  color: #2d57d6;
 }
 
 .qHeader__input {
@@ -64,7 +64,6 @@
 .qHeader__avatar {
   cursor: pointer;
 }
-
 .qHeader__Rem {
   display: flex;
   align-items: center;
@@ -78,20 +77,21 @@
   cursor: pointer;
 }
 .qHeader__Rem > .MuiSvgIcon-root:hover {
-  color: #b92b27;
+  color: #cdc8c8;
 }
 
 .qHeader__Rem > .MuiButton-root {
-  color: white;
-  background: #b92b27;
+  background-color: white;
+  border-style: solid;
+  border-width: 1px;
+  border-color:rgb(98, 98, 98);
   text-transform: inherit;
   border-radius: 20px;
   margin-left: 25px;
 }
 
 .qHeader__Rem > .MuiButton-root:hover {
-  color: #ffffff;
-  background: #8f1f1b;
+  background: #cdc8c8;
 }
 
 .modal__title {
@@ -155,14 +155,27 @@
   border: none;
   outline: none;
   margin-left: 5px;
+  margin-bottom: 0px;
+}
+
+.modal__Field > .modal__fieldLink > textarea {
+  flex: 1;
+  border: 1px solid lightgray;
+  outline: none;
+
+  margin-top: 20px;
 }
 
 .modal__buttons {
   display: flex;
   align-items: center;
-  margin-top: 260px;
+  margin-top: 10px;
   margin-right: -20px;
-  border-top: 1px solid lightgray;
+
+}
+
+.modal_buttons > input {
+  margin-left: 20px;
 }
 
 .modal__buttons > .cancle {
@@ -177,6 +190,7 @@
   border-radius: 33px;
   cursor: pointer;
 }
+
 .modal__buttons > .add {
   border: none;
   outline: none;
@@ -189,3 +203,13 @@
   border-radius: 33px;
   cursor: pointer;
 }
+
+
+.progress {
+  border: none;
+}
+
+.post_username {
+  font-size: 1px;
+}
+

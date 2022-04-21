@@ -15,7 +15,7 @@ function SidebarOption({ src, title}) {
           src={src}
           alt=""
         />
-        <p>{title}</p>
+        <p className="sidebar_title">{title}</p>
       </div>
   );
 }

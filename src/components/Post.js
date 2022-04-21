@@ -13,7 +13,7 @@ import db from "../firebase";
 import { selectQuestionId, setQuestionInfo } from "../features/questionSlice";
 import firebase from "firebase";
 
-function Post({ Id, tag, question, imageUrl, timestamp, users }) {
+function Post({ Id, tag, question, content, imageUrl, timestamp, users }) {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
@@ -171,9 +171,12 @@ function Post({ Id, tag, question, imageUrl, timestamp, users }) {
           <ArrowDownwardOutlinedIcon />
         </div>
 
+        <RepeatOutlinedIcon />
         <ChatBubbleOutlineOutlinedIcon />
         <p className="tag">{tag}</p>
+        <p className="content">{content}</p>
         <div className="post__footerLeft">
+          <ShareOutlined />
           <MoreHorizOutlined />
         </div>
       </div>
