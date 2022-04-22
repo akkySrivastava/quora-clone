@@ -22,23 +22,25 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  /* margin-top: 1px; */
 }
 
 .qHeader__icons > .active > .MuiSvgIcon-root {
-  fill: #2d57d6;
+  margin-top: 3px;
+  fill: black;
 }
 
 .qHeader__icon > .MuiSvgIcon-root {
   font-size: xx-large;
   background-color: white;
   padding: 5px 20px;
-  color: gray;
 }
 
 .qHeader__icon > .MuiSvgIcon-root:hover {
-  background-color: rgba(233, 233, 233, 0.5);
+  /* background-color: rgba(233, 233, 233, 0.5); */
+  background-image: url(http://localhost:3000/pixel_background.png);
   border-radius: 10px;
-  color: #2d57d6;
+  /* color: #2d57d6; */
 }
 
 .qHeader__input {
@@ -58,12 +60,38 @@
 }
 
 .qHeader__input > .MuiSvgIcon-root {
-  color: gray;
+  color: black;
 }
 
 .qHeader__avatar {
   cursor: pointer;
+  margin-right: 0px;
 }
+
+.qHeader__avatar:hover{
+  background-color: rgba(74, 2, 2, 0.5);
+  border-radius: 19px;
+}
+
+.qHeader__logout {
+  cursor: pointer;
+  margin-right: 20px;
+  font-size: xx-large;
+  background-color: white;
+  padding: 5px 20px;
+}
+.qHeader__logout > img {
+  height: 27px;
+  margin-top: 6px;
+}
+
+.qHeader__logout:hover{
+  /* background-color: rgba(233, 233, 233, 0.5); */
+  background-image: url(http://localhost:3000/pixel_background.png);
+  border-radius: 10px;
+  color: #2d57d6;
+}
+
 .qHeader__Rem {
   display: flex;
   align-items: center;
