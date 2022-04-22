@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400&display=swap');
+
 .sidebarOptions {
   display: flex;
   flex-direction: column;
@@ -5,14 +7,12 @@
   margin-right: 0px;
   height: 100%;
   width: 15%;
-  top: 60px;
+  top: 40px;
   padding-top: 20px;
-  background-attachment: fixed;
   position: fixed;
   background-image: url(http://localhost:3000/sidebar_background.png);
   background-size: 17%;
   background-attachment: fixed;
-  position: fixed;
   
 }
 
@@ -41,14 +41,16 @@
 
 .sidebarOption > p {
   margin-left: 10px;
-  color: darkslategray;
+  font-weight: 'Doris';
+  color: white;
   font-weight: 400;
   font-size: 13px;
 }
 
 .sidebarOption > .text {
+  font-weight: 'Doris';
   margin-left: 23px;
-  color: darkslategray;
+  color: white;
   font-weight: 400;
   font-size: 13px;
 }
