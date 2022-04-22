@@ -78,7 +78,7 @@
   cursor: pointer;
   margin-right: 20px;
   font-size: xx-large;
-  background-color: white;
+  /* background-color: white; */
   padding: 5px 20px;
 }
 .qHeader__logout > img {
