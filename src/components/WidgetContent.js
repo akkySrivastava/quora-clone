@@ -64,6 +64,16 @@ function WidgetContent() {
           <p>Just finished the latest...</p>
         </div>
       </div>
+      <div className="widget__content">
+        <img
+          src="https://qphs.fs.quoracdn.net/main-thumb-t-801-100-Sf8h894FXbQZQit0TeqDrrqS6xw6dwCQ.jpeg"
+          alt=""
+        />
+        <div className="widget__contentTitle">
+          <h5>Second Verse!!!</h5>
+          <p>The second verse now ...</p>
+        </div>
+      </div>
     </div>
   );
 }
