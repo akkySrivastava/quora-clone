@@ -1,14 +1,16 @@
 .widget {
   flex: 0.2;
-  margin-left: 20px;
   display: flex;
   flex-direction: column;
   padding: 10px;
+  margin-left: 20px;
   margin-right: 20px;
+  max-height: 75vh;
   border-radius: 5px;
-  max-height: 85vh;
+  top: 115px;
   background-image: url(http://localhost:3000/top_posts_background.png);
   background-size: cover;
+  position: sticky;
 }
 
 .widget__header > h5 {
@@ -22,4 +24,5 @@
 .widget__contents {
   display: flex;
   flex-direction: column;
+  /* position: fixed; */
 }
