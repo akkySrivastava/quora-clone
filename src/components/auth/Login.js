@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import { auth, provider } from "../../firebase";
+import { Search } from "@material-ui/icons";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -40,9 +41,10 @@ function Login() {
     <div className="login">
       <div className="login__container">
         <div className="login__logo">
-        </div>
-        <div className="login__desc">
-          <h3>Sorin Login</h3>
+          <img
+            className="login_logo"
+            src="http://localhost:3000/sorin_logo.png"
+          />
         </div>
         <div className="login__auth">
           <div className="login__authOptions">
