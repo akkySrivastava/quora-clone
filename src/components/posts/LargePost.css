@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@600&display=swap');
+
+.large_post {
+    display: flex;
+    background-color: #F8F2FB;
+    flex-direction: column;
+    flex: 0.6;
+  }
+
+
+.large_post > h1 {
+    text-align: center;
+    color: #000;
+    margin-top: 10px;
+    font-family: 'Dosis';
+    font-style: normal;
+    font-weight:600;
+    font-size: 25px;
+    letter-spacing: 1.1px;
+  }
+
+.lp_info {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.lp_tag {
+    color: #000;
+    margin-left: 5%;
+    margin-top: 10px;
+    font-family: 'Dosis';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 1.1px;
+  }
+
+  .lp_tag > .tag {
+      background-color: lightgray;
+      color: black;
+      padding: 3px;
+      padding-left: 12px;
+      padding-right: 12px;
+      border-radius: 100px;
+      margin-left:10px;
+      margin-right: 10px;
+  }
+
+  .lp_progress {
+
+  }
+  .large_post > img {
+    position: relative;
+    width: 90%;
+    max-width: 90%;
+    margin-left: 5%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-style: solid;
+    border-color: #C00DFF;
+    border-radius: 5px;
+  }
+
+  .large_post > p {
+      margin-left: 5%;
+      font-family: 'Dosis';
+      font-weight: 500;
+      font-size: 20px;
+      margin-bottom: 10px;
+      max-width: 90%;
+      
+  }

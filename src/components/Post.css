@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400&display=swap');
+
 .post {
   display: flex;
   flex-direction: column;
@@ -20,14 +22,12 @@
 }
 
 .post__info > h4 {
+  font-family: 'Dosis';
   margin-left: 10px;
-  cursor: pointer;
-  font-size: 13px;
+  font-weight: 600;
+  font-size: 18px;
 }
 
-.post__info > h4:hover {
-  text-decoration: underline;
-}
 
 .post__info > small {
   margin-left: 10px;
@@ -39,8 +39,10 @@
 }
 
 .post__body > .post__question {
+  font-family: 'Dosis';
   margin-top: 10px;
-  font-weight: bold;
+  font-weight: bolder;
+  font-size: 25px;
   margin-bottom: 10px;
   cursor: pointer;
   display: flex;
@@ -51,19 +53,22 @@
 .post__question > .post__btnAnswer {
   margin-left: auto;
   cursor: pointer;
-  padding: 7px;
-  background-color: blue;
+  padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  background-color: rgb(39, 84, 221);;
   outline: none;
   border: none;
-  color: lightgray;
+  color: white;
   font-weight: 300;
   font-size: 14px;
   border-radius: 33px;
 }
 
+
 .post__btnAnswer:hover {
-  color: blue;
-  background: lightgray;
+  color: white;
+  background: #1201F5;
 }
 
 .post__question > p:hover {
@@ -79,11 +84,14 @@
 } */
 
 .post__body > img {
-  width: 100%;
-  object-fit: contain;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+
   background-color: rgb(238, 238, 238);
   border-radius: 5px;
   cursor: pointer;
+  
   margin-top: 10px;
 }
 
@@ -110,13 +118,35 @@
 
 .post__footerAction > .MuiSvgIcon-root {
   color: gray;
-  margin-right: 40px;
+  margin-right: 10px;
   cursor: pointer;
 }
 
 .post__footerAction > .MuiSvgIcon-root:hover {
   color: rgb(0, 140, 255);
   margin-right: 40px;
+}
+
+.comments__footer {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.tag__footer {
+
+  background-color: lightgray;
+
+  color: black;
+  padding: 7px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 100px;
+  margin-left:10px;
+  margin-right: 10px;
+}
+
+.tag {
+  font-weight: 700;
 }
 
 .post__footerLeft {
@@ -198,6 +228,3 @@
 }
 
 
-.tag {
-  font-weight: 700;
-}

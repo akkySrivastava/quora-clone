@@ -6,7 +6,6 @@ import db from "../firebase";
 import { FilterContext } from "./filter.js";
 
 
-
 function Feed() {
   const [posts, setPosts] = useState([]);
   const [filter, setFilter] = useContext(FilterContext);
@@ -27,10 +26,8 @@ function Feed() {
 
   return (
     <div className="feed">
-      <QuorBox />
       {posts.map(({ id, questions }) => (
-
-            filter == "all" || questions.tag == filter ? <Post
+            filter.toLowerCase() == "all" || questions.tag == filter ? <Post
               key={id}
               Id={id}
               tag={questions.tag}
@@ -41,6 +38,7 @@ function Feed() {
               users={questions.user} 
           /> : null
       ))}
+      
     </div>
   );
 }

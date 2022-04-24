@@ -1,0 +1,41 @@
+h2 {
+    color: #000;
+    margin-left: 5%;
+    margin-top: 10px;
+    font-family: 'Dosis';
+    font-style: normal;
+    font-weight:800;
+    font-size: 20px;
+    letter-spacing: 1.1px;
+  }
+
+.previous_posts {
+    display: inline-flex;
+    width: 90%;
+    margin-top: 10px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 30px;
+    vertical-align: baseline;
+    overflow-x: auto;
+    white-space: nowrap;
+
+}
+
+.previous_posts > img {
+    object-fit: fill;
+    border-style: solid;
+    border-color: #C00DFF;
+    border-radius: 5px;
+    width: 100%;
+    min-width: 25%;
+    margin-right: 20px;
+    transition: all 0.2s ease-in;
+    
+}
+.previous_posts > img:hover {
+    border-style: solid;
+    cursor: pointer;
+    border-color: #8700b8;
+    transition: all 0.2s ease-in;
+}
