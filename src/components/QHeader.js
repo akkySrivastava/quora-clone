@@ -7,6 +7,7 @@ import NotificationsOutlinedIcon from "@material-ui/icons/NotificationsOutlined"
 import SearchIcon from "@material-ui/icons/Search";
 import LanguageIcon from "@material-ui/icons/Language";
 import Modal from "react-modal";
+import tagMap from "../util/sidebar_map";
 
 import "./QHeader.css";
 import { Avatar, Button, Input } from "@material-ui/core";
@@ -86,7 +87,7 @@ function QHeader() {
       </div>
       <div className="qHeader__icons">
         <div className="active qHeader__icon">
-          <HomeIcon />
+          <HomeIcon onClick={()=>{console.log("A!")}}/>
         </div>
         <div className="qHeader__logout">
           {/* <PeopleAltOutlinedIcon />  */}
@@ -133,7 +134,6 @@ function QHeader() {
         >
           <div className="modal__title">
             <h5>Add Question</h5>
-            <h5>Share Link</h5>
           </div>
           <div className="modal__info">
             <Avatar
@@ -164,9 +164,12 @@ function QHeader() {
           </div>
           <div className="modal__buttons">
             <select name="Categories" id="selectList" onChange={(e) => setInputTag(e.target.value)}>
+            {Object.keys(tagMap).map((key) => (
+                <option value={key}> {key} </option>
+              ))}
               <option value="Visual Arts">Visual Arts</option>
               <option value="Writing">Writing</option>
-              <option value="Film">Film</option>
+              <option value="Film">Film </option>
               <option value="Music">Music</option>
             </select>
             <input type="file" accept="image/*" multiple = {false} onChange={(e) => setImage(e.target.files[0])} />

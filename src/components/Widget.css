@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400&display=swap');
 .widget {
   flex: 0.2;
+  margin-left: 20px;
+  position: sticky;
   display: flex;
   flex-direction: column;
   padding: 10px;
@@ -15,9 +18,12 @@
 
 .widget__header > h5 {
   text-align: center;
+  color: white;
   padding: 10px;
-  color: rgb(41, 25, 27);
-  font-size: 15px;
+  font-family: 'Dosis';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
   letter-spacing: 1.1px;
 }
 

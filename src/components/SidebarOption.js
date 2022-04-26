@@ -11,10 +11,9 @@ function SidebarOption({ src, title}) {
   return (
       <div className="sidebarOption"
             onClick={() => setFilter(title)}>
-        <img
-          src={src}
-          alt=""
-        />
+              <h2>
+                {src}
+              </h2>
         <p className="sidebar_title">{title}</p>
       </div>
   );

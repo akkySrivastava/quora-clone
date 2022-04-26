@@ -3,8 +3,16 @@ import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import Login from "./components/auth/Login";
 import Quora from "./components/Quora";
+import ExpandedPost from "./components/posts/ExpandedPost";
 import { login, logout, selectUser } from "./features/userSlice";
 import { auth } from "./firebase";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
+  
 
 function App() {
   const user = useSelector(selectUser);
@@ -26,7 +34,20 @@ function App() {
       console.log(authUser);
     });
   }, [dispatch]);
-  return <div className="App">{user ? <Quora /> : <Login />}</div>;
+
+  
+
+  return <div className="App">
+    {user ? 
+          <Router>
+          <Switch>
+            <Route exact path="/" component={Quora} />
+            <Route path="/post" component={ExpandedPost} />
+            <Redirect to="/" />
+          </Switch>
+      </Router>
+    : <Login />}
+    </div>;
 }
 
 export default App;
