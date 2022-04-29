@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import HomeIcon from "@material-ui/icons/Home";
 import FeaturedPlayListOutlinedIcon from "@material-ui/icons/FeaturedPlayListOutlined";
 import AssignmentTurnedInOutlinedIcon from "@material-ui/icons/AssignmentTurnedInOutlined";
@@ -8,6 +8,7 @@ import SearchIcon from "@material-ui/icons/Search";
 import LanguageIcon from "@material-ui/icons/Language";
 import Modal from "react-modal";
 import tagMap from "../util/sidebar_map";
+import {useHistory} from 'react-router-dom';
 
 import "./QHeader.css";
 import { Avatar, Button, Input } from "@material-ui/core";
@@ -33,10 +34,14 @@ function QHeader() {
 
   const questionName = input;
 
+  const history = useHistory();
+  const onHomeClick = useCallback(() => history.push('/'));
+
   const handleQuestion = async (e) => {
 
     e.preventDefault();
     setIsModalOpen(false);
+
 
     if(image != null) {
   
@@ -83,11 +88,12 @@ function QHeader() {
         <img
           src="http://localhost:3000/sorin_logo.png"
           alt="LogoNotFound"
+          onClick={onHomeClick}
         />
       </div>
       <div className="qHeader__icons">
         <div className="active qHeader__icon">
-          <HomeIcon onClick={()=>{console.log("A!")}}/>
+          <HomeIcon onClick={onHomeClick}/>
         </div>
         <div className="qHeader__icon">
           <FeaturedPlayListOutlinedIcon />

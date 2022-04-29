@@ -1,14 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "./Comments.css"
 import { useDispatch, useSelector } from "react-redux";
 import db from "../../firebase"
 import firebase from "firebase"
 import { selectQuestionId, setQuestionInfo } from "../../features/questionSlice";
+import { Link, useHistory } from "react-router-dom";
 
 function Comments({userEmail, id}) {
 
     const [getAnswers, setGetAnswers] = useState([]);
     const [answer, setAnswer] = useState('');
+    
+    const history = useHistory();
+    const onCollaborateClick = useCallback(() => history.push('/collaborate', { header: "Request to Collaborate" ,
+                                                                                questions: ["Why would you like to join this project?",
+                                                                                            "What skills can you contribute to this project?",
+                                                                                            "What experience do you have?"]}));
+
     const dispatch = useDispatch();
 
     const getName = (email) => { return email.substring(0, email.indexOf('@')) }
@@ -63,6 +71,9 @@ function Comments({userEmail, id}) {
                     <Answer author={getName(answers.user)} timestamp={answers.timestamp} answer={answers.answer}/>
                 ))}
             </div>
+
+            <button onClick={onCollaborateClick}>Collaborate</button>
+           
 
         </div>
         

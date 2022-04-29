@@ -4,6 +4,7 @@ import "./App.css";
 import Login from "./components/auth/Login";
 import Quora from "./components/Quora";
 import ExpandedPost from "./components/posts/ExpandedPost";
+import Form from "./components/Form/Form"
 import { login, logout, selectUser } from "./features/userSlice";
 import { auth } from "./firebase";
 import {
@@ -43,6 +44,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Quora} />
             <Route path="/post" component={ExpandedPost} />
+            <Route path="/collaborate" component={Form}  />
             <Redirect to="/" />
           </Switch>
       </Router>

@@ -18,6 +18,12 @@
   margin-right: 20px;
 }
 
+.qHeader__logo > img:hover {
+  height: 30px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
 .qHeader__icons {
   display: flex;
   align-items: center;
