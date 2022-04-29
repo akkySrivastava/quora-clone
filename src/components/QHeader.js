@@ -95,17 +95,13 @@ function QHeader() {
         <div className="active qHeader__icon">
           <HomeIcon onClick={onHomeClick}/>
         </div>
-        <div className="qHeader__icon">
-          <FeaturedPlayListOutlinedIcon />
-        </div>
-        <div className="qHeader__icon">
-          <AssignmentTurnedInOutlinedIcon />
-        </div>
-        <div className="qHeader__icon">
-          <PeopleAltOutlinedIcon />
-        </div>
-        <div className="qHeader__icon">
-          <NotificationsOutlinedIcon />
+        <div className="qHeader__logout">
+          {/* <PeopleAltOutlinedIcon />  */}
+          <img
+            onClick={() => auth.signOut()}
+            src="https://iconarchive.com/download/i91934/icons8/windows-8/User-Interface-Logout.ico"
+            alt="LogoNotFound"
+          />
         </div>
       </div>
       <div className="qHeader__input">
@@ -115,7 +111,6 @@ function QHeader() {
       <div className="qHeader__Rem">
         <div className="qHeader__avatar">
           <Avatar
-            onClick={() => auth.signOut()}
             className="Avatar"
             src={
               user.photo
