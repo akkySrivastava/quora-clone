@@ -72,7 +72,7 @@ function Comments({userEmail, id}) {
                 ))}
             </div>
 
-            <button onClick={onCollaborateClick}>Collaborate</button>
+            <button className="collaborate" onClick={onCollaborateClick}>Collaborate</button>
            
 
         </div>

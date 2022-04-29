@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useCallback } from "react";
 import QandA from "./QandA";
 import QHeader from "../QHeader";
-import { useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 
 import "./Form.css";
 
 function Form() {
     const location = useLocation();
+    const history = useHistory();
+    const onSubmit = useCallback(() => history.push('/'));
   return (
     <div className="form-page">
         <QHeader />
@@ -17,7 +19,7 @@ function Form() {
                 {location.state.questions.map((question) => (
                     <QandA question={question} />
                 ))}
-                <button>Send</button>
+                <button onClick={onSubmit}>Send</button>
         </div>
     </div> 
   );
