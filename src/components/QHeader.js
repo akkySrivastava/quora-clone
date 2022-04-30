@@ -30,12 +30,18 @@ function QHeader() {
   const [inputTag, setInputTag] = useState("");
   const [inputContent, setInputContent] = useState("");
   const [image , setImage] = useState(null);
+  const [progress, setProgress] = useState(50); 
   const uploadedImage = React.useRef(null);
 
   const questionName = input;
 
   const history = useHistory();
   const onHomeClick = useCallback(() => history.push('/'));
+
+  const handleSlider = e => {
+    console.log('setting level', e.target.value)
+    setProgress(e.target.value);
+  };
 
   const handleQuestion = async (e) => {
 
@@ -152,9 +158,17 @@ function QHeader() {
             />
             <p>{user.disPlayName ? user.disPlayName : user.email} asked</p>
             <div className="modal__scope">
-              <PeopleAltOutlinedIcon />
-              <p>Public</p>
-              <ExpandMore />
+            <input
+              type="range"
+              id={"slider"}
+              min={0}
+              max={100}
+              step={0.5}
+              // value={state} // don't set value from state
+              defaultValue={progress} // but instead pass state value as default value
+              onChange={e => console.log(e.target.value)} // don't set state on all change as react will re-render
+              onMouseUp={handleSlider} // only set state when handle is released
+            />
             </div>
           </div>
           <div className="modal__Field">
@@ -173,12 +187,12 @@ function QHeader() {
             {Object.keys(tagMap).map((key) => (
                 <option value={key}> {key} </option>
               ))}
-              <option value="Visual Arts">Visual Arts</option>
-              <option value="Writing">Writing</option>
-              <option value="Film">Film </option>
-              <option value="Music">Music</option>
             </select>
+            <div class="slidecontainer">
+        
+            </div>
             <input type="file" accept="image/*" multiple = {false} onChange={(e) => setImage(e.target.files[0])} />
+            
             <button className="cancle" onClick={() => setIsModalOpen(false)}>
               Cancel
             </button>
