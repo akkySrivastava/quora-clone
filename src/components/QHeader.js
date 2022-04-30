@@ -61,6 +61,7 @@ function QHeader() {
           question: input,
           tag: inputTag,
           content: inputContent,
+          progress: progress,
           image: await imageRef.getDownloadURL(),
           timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         });
@@ -73,6 +74,7 @@ function QHeader() {
           question: input,
           tag: inputTag,
           content: inputContent,
+          progress: progress,
           image: null,
           timestamp: firebase.firestore.FieldValue.serverTimestamp(),
         });
@@ -85,6 +87,7 @@ function QHeader() {
     setInputUrl("");
     setInputTag("");
     setInputContent("");
+    setProgress(50);
     setImage(null);
   };
 
@@ -153,24 +156,22 @@ function QHeader() {
                   : "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_250,q_auto:good,w_250/v1/gcs/platform-data-twilio/contentbuilder/Avatar.png"
               }
             />
- slider
-            <p>{user.disPlayName ? user.disPlayName : user.email} asked</p>
+
+            <p>{user.disPlayName ? user.disPlayName : user.email}</p>
             <div className="modal__scope">
             <input
               type="range"
               id={"slider"}
               min={0}
               max={100}
-              step={0.5}
+              step={1}
               // value={state} // don't set value from state
               defaultValue={progress} // but instead pass state value as default value
-              onChange={e => console.log(e.target.value)} // don't set state on all change as react will re-render
-              onMouseUp={handleSlider} // only set state when handle is released
+              onInput={handleSlider} // only set state when handle is released
             />
+            <h5>{progress + "%"}</h5>
             </div>
-=======
-            <p>{user.disPlayName ? user.disPlayName : user.email}</p>
-master
+
           </div>
           
           <div className="modal__Field">

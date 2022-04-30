@@ -16,7 +16,7 @@ import firebase from "firebase";
 import tagMap from "../util/sidebar_map";
 
 
-function Post({ Id, tag, question, content, imageUrl, timestamp, users }) {
+function Post({ Id, tag, question, content, imageUrl, progress, timestamp, users }) {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
@@ -26,7 +26,7 @@ function Post({ Id, tag, question, content, imageUrl, timestamp, users }) {
   const [getAnswers, setGetAnswers] = useState([]);
 
   const history = useHistory();
-  const onPostClick = useCallback(() => history.push('/post', { id: Id, question: question, tag: tag, content: content, imageUrl: imageUrl, userEmail: users.email }));
+  const onPostClick = useCallback(() => history.push('/post', { id: Id, question: question, tag: tag, content: content, imageUrl: imageUrl, progress: progress, userEmail: users.email }));
 
   const getName = (email) => { return email.substring(0, email.indexOf('@')) }
 

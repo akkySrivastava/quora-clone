@@ -18,6 +18,7 @@ function ExpandedPost() {
               tag={location.state.tag}
               question={location.state.question}
               content={location.state.content}
+              progress={location.state.progress}
               userEmail={location.state.userEmail}/>
             <Comments
               userEmail={location.state.userEmail}

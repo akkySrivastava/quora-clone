@@ -35,6 +35,7 @@ function Feed() {
               content={questions.content}
               imageUrl={questions.image}
               timestamp={questions.timestamp}
+              progress={questions.progress}
               users={questions.user} 
           /> : null
       ))}
