@@ -63,7 +63,6 @@ function Post({ Id, tag, question, content, imageUrl, timestamp, users }) {
   return (
     <div
       className="post"
-      onClick={onPostClick}
     >
       <div className="post__info">
         <Avatar
@@ -79,7 +78,7 @@ function Post({ Id, tag, question, content, imageUrl, timestamp, users }) {
           <p className="tag">{tagMap[tag]}</p>
         </div>
       </div>
-      <div className="post__body">
+      <div className="post__body" onClick={onPostClick}>
         <div className="post__question">
           <p>{question}</p>
 

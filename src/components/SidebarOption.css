@@ -44,12 +44,12 @@
   margin-left: 10px;
   font-family: 'Dosis';
   color: white;
-  font-weight: 900;
+  font-weight: 600;
   font-size: 20px;
 }
 
 .sidebarOption > .text {
-  font-weight: 'Dosis';
+  font-family: 'Dosis';
   margin-left: 23px;
   color: white;
   font-weight: 400;
