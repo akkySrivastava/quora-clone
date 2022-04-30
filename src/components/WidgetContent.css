@@ -10,6 +10,7 @@
   padding: 5px;
   background-color: white;
   border-radius: 3px;
+  font-family: 'Dosis';
 }
 
 .widget__content:hover {
@@ -26,10 +27,12 @@
 }
 
 .widget__contentTitle > h5 {
+  font-size: 18px;
+  font-weight: 600;
   color: rgb(70, 68, 68);
 }
 
 .widget__contentTitle > p {
   color: gray;
-  font-size: small;
+  font-size: 16px;
 }

@@ -1,4 +1,3 @@
-
 .qHeader {
   display: flex;
   justify-content: center;
@@ -14,15 +13,9 @@
   box-shadow: 0px 5px 8px -9px rgba(0, 0, 0, 0.5);
 }
 
-.qHeader__logo > img {
+.qHeader__logo>img {
   height: 30px;
   margin-right: 20px;
-}
-
-.qHeader__logo > img:hover {
-  height: 30px;
-  margin-right: 20px;
-  cursor: pointer;
 }
 
 .qHeader__icons {
@@ -32,7 +25,7 @@
   /* margin-top: 1px; */
 }
 
-.qHeader__icons > .active > .MuiSvgIcon-root {
+.qHeader__icons>.active>.MuiSvgIcon-root {
   margin-top: 3px;
   fill: black;
 }
@@ -66,7 +59,7 @@
   color: rgb(49, 49, 49);
 }
 
-.qHeader__input > .MuiSvgIcon-root {
+.qHeader__input>.MuiSvgIcon-root {
   color: black;
 }
 
@@ -75,7 +68,7 @@
   margin-right: 0px;
 }
 
-.qHeader__avatar:hover{
+.qHeader__avatar:hover {
   background-color: rgba(74, 2, 2, 0.5);
   border-radius: 19px;
 }
@@ -87,12 +80,13 @@
   /* background-color: white; */
   padding: 5px 20px;
 }
-.qHeader__logout > img {
+
+.qHeader__logout>img {
   height: 27px;
   margin-top: 6px;
 }
 
-.qHeader__logout:hover{
+.qHeader__logout:hover {
   /* background-color: rgba(233, 233, 233, 0.5); */
   background-image: url(http://localhost:3000/pixel_background.png);
   border-radius: 10px;
@@ -111,22 +105,27 @@
   margin-left: 25px;
   cursor: pointer;
 }
-.qHeader__Rem > .MuiSvgIcon-root:hover {
+
+.qHeader__Rem>.MuiSvgIcon-root:hover {
   color: #cdc8c8;
 }
 
 .qHeader__Rem > .MuiButton-root {
-  background-color: white;
-  border-style: solid;
-  border-width: 1px;
-  border-color:rgb(98, 98, 98);
+  background-color: rgb(39, 84, 221);
+  color: white;
+  padding: 10px;
+  border: none;
+  border-color: rgb(98, 98, 98);
   text-transform: inherit;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: 'Dosis';
   border-radius: 20px;
   margin-left: 25px;
 }
 
 .qHeader__Rem > .MuiButton-root:hover {
-  background: #cdc8c8;
+  background-color: #1201F5;
 }
 
 .modal__title {
@@ -151,12 +150,13 @@
 .modal__info {
   display: flex;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 15px;
 }
 
 .modal__info > p {
   margin-left: 10px;
-  font-size: small;
+  font-family: 'Dosis';
+  font-size: x-large;
   color: gray;
 }
 
@@ -178,6 +178,13 @@
   flex: 1;
 }
 
+
+.modal__Field > .MuiInput-root {
+  font-family: 'Dosis';
+  font-size: 20px;
+}
+
+
 .modal__Field > .modal__fieldLink {
   color: gray;
   display: flex;
@@ -197,6 +204,8 @@
   flex: 1;
   border: 1px solid lightgray;
   outline: none;
+  font-family: 'Dosis';
+  font-size: 16px;
 
   margin-top: 20px;
 }
@@ -206,37 +215,53 @@
   align-items: center;
   margin-top: 10px;
   margin-right: -20px;
-
 }
 
-.modal_buttons > input {
+.modal_buttons>input {
   margin-left: 20px;
 }
 
+
 .modal__buttons > .cancle {
-  margin-left: auto;
-  border: none;
-  margin-top: 5px;
-  outline: none;
-  color: gray;
+  background-color: rgb(39, 84, 221);
+  color: white;
+  font-family: 'Dosis';
+  font-size: 16px;
   font-weight: 500;
+  border: none;
+  border-radius: 20px;
   padding: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 5px;
+  margin-left: auto;
   margin-right: 10px;
-  border-radius: 33px;
   cursor: pointer;
 }
 
+.modal__buttons > .cancle:hover {
+  background-color: #1201F5;
+}
+
 .modal__buttons > .add {
-  border: none;
-  outline: none;
-  margin-top: 5px;
-  background-color: rgb(0, 64, 255);
+  background-color: rgb(39, 84, 221);
   color: white;
-  font-weight: 700;
+  font-family: 'Dosis';
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 20px;
   padding: 10px;
-  margin-right: 10px;
-  border-radius: 33px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-top: 5px;
+  margin-left: 10px;
+  margin-right: 20px;
   cursor: pointer;
+}
+
+.modal__buttons > .add:hover {
+  background-color: #1201F5;
 }
 
 
@@ -279,3 +304,6 @@
   background: #04AA6D;
   cursor: pointer;
 } */
+=======
+}
+master

@@ -144,9 +144,6 @@ function QHeader() {
             },
           }}
         >
-          <div className="modal__title">
-            <h5>Add Question</h5>
-          </div>
           <div className="modal__info">
             <Avatar
               className="avatar"
@@ -156,6 +153,7 @@ function QHeader() {
                   : "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_250,q_auto:good,w_250/v1/gcs/platform-data-twilio/contentbuilder/Avatar.png"
               }
             />
+ slider
             <p>{user.disPlayName ? user.disPlayName : user.email} asked</p>
             <div className="modal__scope">
             <input
@@ -170,7 +168,11 @@ function QHeader() {
               onMouseUp={handleSlider} // only set state when handle is released
             />
             </div>
+=======
+            <p>{user.disPlayName ? user.disPlayName : user.email}</p>
+master
           </div>
+          
           <div className="modal__Field">
             <Input
               value={input}
@@ -197,19 +199,10 @@ function QHeader() {
               Cancel
             </button>
             <button type="sumbit" onClick={handleQuestion} className="add">
-              Add Question
+              Post
             </button>
           </div>
-          <img
-          ref={uploadedImage}
-          style={{
-            width: "100%",
-            height: "100%",
-            position: "absolute"
-          }}
-        />
         </Modal>
-
       </div>
     </div>
   );
