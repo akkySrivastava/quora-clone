@@ -2,10 +2,11 @@
   display: flex;
   flex-direction: column;
   padding: 10px;
-  border: 1px solid lightgray;
   background-color: white;
   border-radius: 5px;
   cursor: pointer;
+  background-color: rgb(240, 240, 240);
+  border: 0.5px solid rgb(175, 175, 175);
 }
 
 .quoraBox:hover {

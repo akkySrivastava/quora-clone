@@ -1,7 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@800&display=swap');
+
 .sidebarOptions {
   display: flex;
   flex-direction: column;
+  padding: 10px;
+  margin-right: 0px;
+  height: 100%;
+  width: 15%;
+  top: 40px;
+  padding-top: 20px;
+  position: fixed;
+  background-image: url(http://localhost:3000/sidebar_background.png);
+  background-size: 17%;
+  background-attachment: fixed;
+  
 }
+
 .sidebarOption {
   display: flex;
   align-items: center;
@@ -10,11 +24,13 @@
 }
 
 .sidebarOption:hover {
-  background: rgb(211, 211, 211);
   border-radius: 5px;
+  border-color: white;
+  border-style: solid;
 }
+
 .sidebarOption > img {
-  height: 30px;
+  height: 40px;
   border-radius: 5px;
   margin-left: 20px;
 }
@@ -23,16 +39,19 @@
   font-size: medium;
   margin-left: 20px;
 }
+
 .sidebarOption > p {
   margin-left: 10px;
-  color: gray;
-  font-weight: 400;
-  font-size: 13px;
+  font-family: 'Dosis';
+  color: white;
+  font-weight: 600;
+  font-size: 20px;
 }
 
 .sidebarOption > .text {
+  font-family: 'Dosis';
   margin-left: 23px;
-  color: gray;
+  color: white;
   font-weight: 400;
   font-size: 13px;
 }

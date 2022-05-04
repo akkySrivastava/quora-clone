@@ -1,5 +1,6 @@
 import { Avatar } from "@material-ui/core";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
+import {useHistory} from 'react-router-dom';
 import "./Post.css";
 import ArrowUpwardOutlinedIcon from "@material-ui/icons/ArrowUpwardOutlined";
 import ArrowDownwardOutlinedIcon from "@material-ui/icons/ArrowDownwardOutlined";
@@ -12,8 +13,10 @@ import Modal from "react-modal";
 import db from "../firebase";
 import { selectQuestionId, setQuestionInfo } from "../features/questionSlice";
 import firebase from "firebase";
+import tagMap from "../util/sidebar_map";
 
-function Post({ Id, question, imageUrl, timestamp, users }) {
+
+function Post({ Id, tag, question, content, imageUrl, progress, timestamp, users }) {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
@@ -22,9 +25,14 @@ function Post({ Id, question, imageUrl, timestamp, users }) {
   const [answer, setAnswer] = useState("");
   const [getAnswers, setGetAnswers] = useState([]);
 
+  const history = useHistory();
+  const onPostClick = useCallback(() => history.push('/post', { id: Id, question: question, tag: tag, content: content, imageUrl: imageUrl, progress: progress, userEmail: users.email }));
+
+  const getName = (email) => { return email.substring(0, email.indexOf('@')) }
+
   useEffect(() => {
     if (questionId) {
-      db.collection("questions")
+      db.collection("content")
         .doc(questionId)
         .collection("answer")
         .orderBy("timestamp", "desc")
@@ -36,11 +44,12 @@ function Post({ Id, question, imageUrl, timestamp, users }) {
     }
   }, [questionId]);
 
+
   const handleAnswer = (e) => {
     e.preventDefault();
 
     if (questionId) {
-      db.collection("questions").doc(questionId).collection("answer").add({
+      db.collection("content").doc(questionId).collection("answer").add({
         user: user,
         answer: answer,
         questionId: questionId,
@@ -54,33 +63,28 @@ function Post({ Id, question, imageUrl, timestamp, users }) {
   return (
     <div
       className="post"
-      onClick={() =>
-        dispatch(
-          setQuestionInfo({
-            questionId: Id,
-            questionName: question,
-          })
-        )
-      }
     >
       <div className="post__info">
         <Avatar
           src={
             users.photo
               ? users.photo
-              : "https://images-platform.99static.com//_QXV_u2KU7-ihGjWZVHQb5d-yVM=/238x1326:821x1909/fit-in/500x500/99designs-contests-attachments/119/119362/attachment_119362573"
+              : "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_250,q_auto:good,w_250/v1/gcs/platform-data-twilio/contentbuilder/Avatar.png"
           }
         />
-        <h4>{users.displayName ? users.displayName : users.email}</h4>
+        <h4>{getName(users.email)}</h4>
         <small>{new Date(timestamp?.toDate()).toLocaleString()}</small>
+        <div className="tag__footer">
+          <p className="tag">{tagMap[tag]}</p>
+        </div>
       </div>
-      <div className="post__body">
+      <div className="post__body" onClick={onPostClick}>
         <div className="post__question">
           <p>{question}</p>
+
           <button
             onClick={() => setIsModalOpen(true)}
-            className="post__btnAnswer"
-          >
+            className="post__btnAnswer">
             Answer
           </button>
           <Modal
@@ -132,7 +136,7 @@ function Post({ Id, question, imageUrl, timestamp, users }) {
             </div>
           </Modal>
         </div>
-        <div className="post__answer">
+        {/* <div className="post__answer">
           {getAnswers.map(({ id, answers }) => (
             <p key={id} style={{ position: "relative", paddingBottom: "5px" }}>
               {Id === answers.questionId ? (
@@ -162,7 +166,7 @@ function Post({ Id, question, imageUrl, timestamp, users }) {
               )}
             </p>
           ))}
-        </div>
+        </div> */}
         <img src={imageUrl} alt="" />
       </div>
       <div className="post__footer">
@@ -171,8 +175,10 @@ function Post({ Id, question, imageUrl, timestamp, users }) {
           <ArrowDownwardOutlinedIcon />
         </div>
 
-        <RepeatOutlinedIcon />
-        <ChatBubbleOutlineOutlinedIcon />
+        <div className="comments__footer">
+          <ChatBubbleOutlineOutlinedIcon />
+        </div>
+        <p className="content">{content}</p>
         <div className="post__footerLeft">
           <ShareOutlined />
           <MoreHorizOutlined />

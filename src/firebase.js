@@ -1,18 +1,23 @@
 import firebase from "firebase";
+import { getStorage } from "firebase/storage";
+
 const firebaseConfig = {
-  apiKey: "AIzaSyDG2mnrOkS0tafAjU1SqzXfaJS7AMKMSMg",
-  authDomain: "quora-clone-akky.firebaseapp.com",
-  projectId: "quora-clone-akky",
-  storageBucket: "quora-clone-akky.appspot.com",
-  messagingSenderId: "902318949999",
-  appId: "1:902318949999:web:8df2b97a20eece0209ef9a",
-  measurementId: "G-LJBYVXT22Z",
+  apiKey: "AIzaSyDdYiozQo2y_ECs7RsZg-2OsqHAtURTeqs",
+  authDomain: "creative-block-5e3bb.firebaseapp.com",
+  projectId: "creative-block-5e3bb",
+  storageBucket: "creative-block-5e3bb.appspot.com",
+  messagingSenderId: "732218817574",
+  appId: "1:732218817574:web:97ef874e3be7ec24213ae7",
+  measurementId: "G-BRQRJWX5YG"
 };
+
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const provider = new firebase.auth.GoogleAuthProvider();
 const db = firebaseApp.firestore();
+const storage = firebase.storage();
 
-export { auth, provider };
+
+export { auth, provider, storage };
 export default db;

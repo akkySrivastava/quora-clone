@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200&family=Playfair+Display:wght@500;800&display=swap');
+
+.form-page {
+    background-image: url(http://localhost:3000/pixel_background.png);
+    height: 85vw;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.form {
+    background-color: white;
+    color: white;
+    width: 80%;
+    margin-top: 50px;
+    margin-left: 10%;
+    border-radius: 20px;
+    padding-bottom: 30px;
+}
+
+.header {
+    display:inline-block;
+    background: #F4A5A8;
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 40px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    padding-bottom: 20px;
+    width: 76%;
+    margin-left: 12%;
+    font-size: 30px;
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 800;
+    text-shadow: 0px 6px 4px rgba(0, 0, 0, 0.25);
+}
+
+h4 {
+    color: black;
+    font-family: 'Playfair Display';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    margin-bottom: 10px;
+    margin-left: 2%;
+}
+
+.qanda {
+    margin-left: 10%;
+    margin-bottom: 20px;
+}
+
+
+textarea {
+    width: 90%;
+    border: 7px solid #F4A5A8;
+    border-radius: 20px;
+    font-family: 'Dosis';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+
+    /* identical to box height */
+    letter-spacing: 0.05em;
+    padding-left: 10px;
+
+}
+
+.form > button {
+    margin-top: 15px;
+    font-family: 'Dosis';
+    background-color: #F4A5A8;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: darkgray;
+    font-weight: 800;
+    font-size: 20px;
+    margin-left: 35%;
+    width: 30%;
+    color: white;
+    transition: all 0.2s ease-in;
+}
+
+.form > button:hover {
+  background-color: #FFA5A8;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}

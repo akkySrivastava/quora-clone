@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@400&display=swap');
+.comments {
+    background-color: #F3DAE5;
+    flex: 0.3;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.comments > h1 {
+    text-align: center;
+    color: #000;
+    margin-top: 10px;
+    font-family: 'Dosis';
+    font-style: normal;
+    font-weight:600;
+    font-size: 35px;
+    letter-spacing: 1.1px;
+  }
+
+  .user_answer {
+      margin: 10%;
+  }
+
+  .user_answer > textarea {
+    padding: 5px;
+    width: 95%;  
+    resize: none;
+    height: 70px;
+    font-family: 'Dosis';
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 5px;
+    border-color: black;
+    letter-spacing: 1.2px;
+  }
+
+  .user_answer > button {
+      margin-top: 15px;
+      font-family: 'Dosis';
+      background-color: #BE9EC5;
+      border-radius: 20px;
+      border-style: solid;
+      border-color: #000;
+      font-weight: 800;
+      font-size: 20px;
+      width: 100%;
+      color: white;
+      transition: all 0.2s ease-in;
+  }
+
+  .user_answer > button:hover {
+    background-color: #9e80a4;
+    cursor: pointer;
+    transition: all 0.2s ease-in;
+  }
+
+  .collaborate {
+    margin-top: 15px;
+    font-family: 'Dosis';
+    background-color: #ad3ac7;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #000;
+    font-weight: 800;
+    margin-top: 30px;
+    margin-left: 10%;
+    font-size: 20px;
+    width: 80%;
+    color: white;
+    transition: all 0.2s ease-in;
+}
+
+.collaborate {
+  background-color: #9e80a4;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+
+
+  .answers {
+      margin: 10%;
+  }
+
+  .answer{
+    font-family: 'Dosis';
+    font-size: 18px;
+    color: #222;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .answer_body {
+      color: black;
+      font-size: 20px;
+  }

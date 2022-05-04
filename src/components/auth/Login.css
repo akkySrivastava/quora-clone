@@ -5,64 +5,71 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: url("http://qsfs.fs.quoracdn.net/-4-images.home.illo_1920.png-26-e9e6fbe02d908942.png");
+  background: url(http://localhost:3000/pixel_background.png);
+  background-size: cover;
 }
 
 .login__container {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  width: 700px;
+  width: 400px;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
 }
 
 .login__logo {
-  display: flex;
-  justify-content: center;
-}
-
-.login__desc {
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 10px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 10px;
+  max-width: 80%;
 }
 
 .login__desc > h3 {
-  margin-top: 10px;
+  margin-top: 0px;
   text-align: center;
-  font-size: xx-large;
+  font-size: xxx-large;
   font-family: "Cedarville Cursive", cursive;
 }
+
 .login__desc > p {
   color: gray;
   text-align: center;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 40px;
 }
 
 .login__auth {
   display: flex;
-  margin-top: 50px;
+  justify-content: center;
+  margin-top: 0px;
 }
 
 .login__authOptions {
   display: flex;
   flex: 0.5;
   flex-direction: column;
-  padding: 20px;
-  border-right: 1px solid lightgray;
+  padding: 10px;
+  border-right: 0px;
 }
 
 .login__authOption {
   display: flex;
   align-items: center;
-  padding: 7px;
+  padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid lightgray;
-  border-radius: 5px;
+  border: none;
   cursor: pointer;
+  background-color: rgb(238, 217, 217);
+  border-radius: 25px; 
+  border-top-left-radius:25px;  
+  border-top-right-radius:25px;  
+  border-bottom-right-radius:25px;  
+  border-bottom-left-radius:25px;     
 }
 
 .login__authOption:hover {
@@ -75,31 +82,24 @@
 }
 
 .login__authOption > p {
-  margin-left: 11px;
+  margin-left: 10px;
 }
 
-.login__authDesc {
-  display: flex;
-  align-items: center;
-  padding: 7px;
-  margin-bottom: 15px;
-}
-.login__authDesc > p {
-  font-size: small;
-  color: gray;
-}
 
 .login__emailPass {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px;
+  padding: 5px;
   flex: 0.5;
-  margin-left: 20px;
+  margin-left: 0px;
 }
 
-.login__label > h4 {
-  padding: 5px;
+.login__label > h3 {
+  padding: 0px;
+  font-size: 40;
+  margin-left: 2px;
+  align-items: center;
 }
 
 .login__inputFields {
@@ -109,22 +109,50 @@
 }
 
 .login__inputField {
-  padding: 5px;
+  padding: 0px;
 }
 
 .login__inputField > input {
-  padding: 10px;
-  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 0px;
+  height: 25px;
+  width: 90%;
   outline: none;
   border: none;
   background-color: rgb(236, 236, 236);
+  font-size: 10pt;
+  border-radius: 10px;
+}
+
+.login__inputField_pass {
+  margin-top: 0px;
+  margin-bottom: 15px;
+  height: 15px;
+}
+
+.login__inputField_pass > input {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  height: 25px;
+  width: 90%;
+  outline: none;
+  border: none;
+  background-color: rgb(236, 236, 236);
+  font-size: 10pt;
+  border-radius: 10px;
 }
 
 .login__forgButt {
-  padding-left: 10px;
+  padding-left: 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 3px;
+  margin-bottom: 5px;
 }
 
 .login__forgButt > small {
@@ -139,7 +167,6 @@
 
 .login__forgButt > button {
   padding: 9px;
-  border-radius: 5px;
   border: none;
   outline: none;
   background-color: blue;
@@ -149,17 +176,63 @@
   cursor: pointer;
 }
 
-.login__emailPass > button {
+.login_button > button {
   padding: 9px;
-  border-radius: 5px;
   border: none;
   outline: none;
-  background-color: blue;
-  color: white;
+  width: 100%;
+
+  background-color: rgb(238, 217, 217);
+  color: rgb(0, 0, 0);
   font-weight: bold;
   font-size: 15px;
   cursor: pointer;
-  margin-top: 10px;
+  border-radius: 25px; 
+  border-top-left-radius:25px;  
+  border-top-right-radius:25px;  
+  border-bottom-right-radius:25px;  
+  border-bottom-left-radius:25px; 
+  margin-top: 5px;
+  margin-bottom: 5px; 
+}
+.login_button:hover > button {
+  background-color: rgb(226, 226, 226);
+}
+
+.signup_button > button {
+  padding: 9px;
+  margin-bottom: 0px; 
+  border: none;
+  width: 100%;
+  outline: none;
+  background-color: rgb(238, 217, 217);
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 25px; 
+  border-top-left-radius:25px;  
+  border-top-right-radius:25px;  
+  border-bottom-right-radius:25px;  
+  border-bottom-left-radius:25px;  
+}
+.signup_button:hover > button {
+  background-color: rgb(226, 226, 226);
+}
+
+.login__authDesc {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 0px;
+  margin-left: 90px;
+  margin-top: 0px;
+  width: 45%;
+
+}
+.login__authDesc > p {
+  font-size: small;
+  color: gray;
 }
 
 .login__lang {
@@ -168,7 +241,7 @@
   justify-content: center;
   border-top: 1px solid lightgray;
   border-bottom: 1px solid lightgray;
-  margin-top: 30px;
+  margin-top: 0px;
   padding: 10px;
 }
 
@@ -190,10 +263,12 @@
 }
 
 .login__footer {
-  padding-top: 10px;
+  padding-top: 5px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  padding-bottom: 0px;
+
 }
 
 .login__footer > p {

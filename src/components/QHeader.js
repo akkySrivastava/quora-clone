@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import HomeIcon from "@material-ui/icons/Home";
 import FeaturedPlayListOutlinedIcon from "@material-ui/icons/FeaturedPlayListOutlined";
 import AssignmentTurnedInOutlinedIcon from "@material-ui/icons/AssignmentTurnedInOutlined";
@@ -7,12 +7,15 @@ import NotificationsOutlinedIcon from "@material-ui/icons/NotificationsOutlined"
 import SearchIcon from "@material-ui/icons/Search";
 import LanguageIcon from "@material-ui/icons/Language";
 import Modal from "react-modal";
+import tagMap from "../util/sidebar_map";
+import {useHistory} from 'react-router-dom';
 
 import "./QHeader.css";
 import { Avatar, Button, Input } from "@material-ui/core";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import db, { auth } from "../firebase";
+import { storage } from "../firebase";
 import { ExpandMore, Link } from "@material-ui/icons";
 import firebase from "firebase";
 
@@ -24,68 +27,109 @@ function QHeader() {
   const [IsmodalOpen, setIsModalOpen] = useState(false);
   const [input, setInput] = useState("");
   const [inputUrl, setInputUrl] = useState("");
+  const [inputTag, setInputTag] = useState("");
+  const [inputContent, setInputContent] = useState("");
+  const [image , setImage] = useState(null);
+  const [progress, setProgress] = useState(50); 
+  const uploadedImage = React.useRef(null);
+
   const questionName = input;
 
-  const handleQuestion = (e) => {
+  const history = useHistory();
+  const onHomeClick = useCallback(() => history.push('/'));
+
+  const handleSlider = e => {
+    console.log('setting level', e.target.value)
+    setProgress(e.target.value);
+  };
+
+  const handleQuestion = async (e) => {
+
     e.preventDefault();
     setIsModalOpen(false);
 
-    if (questionName) {
-      db.collection("questions").add({
-        user: user,
-        question: input,
-        imageUrl: inputUrl,
-        timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-      });
+
+    if(image != null) {
+  
+        const storageRef = storage.ref();
+        const imageRef = storageRef.child(image.name);
+        await imageRef.put(image);
+
+      
+        db.collection("content").add({
+          user: user,
+          question: input,
+          tag: inputTag,
+          content: inputContent,
+          progress: progress,
+          image: await imageRef.getDownloadURL(),
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        });
+            
+
+    } else {
+      if (questionName) {
+        db.collection("content").add({
+          user: user,
+          question: input,
+          tag: inputTag,
+          content: inputContent,
+          progress: progress,
+          image: null,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        });
+      }
+  
     }
+
 
     setInput("");
     setInputUrl("");
+    setInputTag("");
+    setInputContent("");
+    setProgress(50);
+    setImage(null);
   };
 
   return (
     <div className="qHeader">
       <div className="qHeader__logo">
         <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Quora_logo_2015.svg/250px-Quora_logo_2015.svg.png"
-          alt=""
+          src="http://localhost:3000/sorin_logo.png"
+          alt="LogoNotFound"
+          onClick={onHomeClick}
         />
       </div>
       <div className="qHeader__icons">
         <div className="active qHeader__icon">
-          <HomeIcon />
+          <HomeIcon onClick={onHomeClick}/>
         </div>
-        <div className="qHeader__icon">
-          <FeaturedPlayListOutlinedIcon />
-        </div>
-        <div className="qHeader__icon">
-          <AssignmentTurnedInOutlinedIcon />
-        </div>
-        <div className="qHeader__icon">
-          <PeopleAltOutlinedIcon />
-        </div>
-        <div className="qHeader__icon">
-          <NotificationsOutlinedIcon />
+        <div className="qHeader__logout">
+          {/* <PeopleAltOutlinedIcon />  */}
+          <img
+            onClick={() => auth.signOut()}
+            src="https://iconarchive.com/download/i91934/icons8/windows-8/User-Interface-Logout.ico"
+            alt="LogoNotFound"
+          />
         </div>
       </div>
       <div className="qHeader__input">
         <SearchIcon />
-        <input type="text" placeholder="Search Quora" />
+        <input type="text" placeholder="Search" />
       </div>
       <div className="qHeader__Rem">
         <div className="qHeader__avatar">
           <Avatar
-            onClick={() => auth.signOut()}
             className="Avatar"
             src={
               user.photo
                 ? user.photo
-                : "https://images-platform.99static.com//_QXV_u2KU7-ihGjWZVHQb5d-yVM=/238x1326:821x1909/fit-in/500x500/99designs-contests-attachments/119/119362/attachment_119362573"
+                : "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_250,q_auto:good,w_250/v1/gcs/platform-data-twilio/contentbuilder/Avatar.png"
             }
           />
         </div>
         <LanguageIcon />
-        <Button onClick={() => setIsModalOpen(true)}>Add Question</Button>
+        <Button className="post_button" onClick={() => setIsModalOpen(true)}>Post Content</Button>
         <Modal
           isOpen={IsmodalOpen}
           onRequestClose={() => setIsModalOpen(false)}
@@ -103,49 +147,60 @@ function QHeader() {
             },
           }}
         >
-          <div className="modal__title">
-            <h5>Add Question</h5>
-            <h5>Share Link</h5>
-          </div>
           <div className="modal__info">
             <Avatar
               className="avatar"
               src={
                 user.photo
                   ? user.photo
-                  : "https://images-platform.99static.com//_QXV_u2KU7-ihGjWZVHQb5d-yVM=/238x1326:821x1909/fit-in/500x500/99designs-contests-attachments/119/119362/attachment_119362573"
+                  : "https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2.0,f_auto,g_center,h_250,q_auto:good,w_250/v1/gcs/platform-data-twilio/contentbuilder/Avatar.png"
               }
             />
-            <p>{user.disPlayName ? user.disPlayName : user.email} asked</p>
+
+            <p>{user.disPlayName ? user.disPlayName : user.email}</p>
             <div className="modal__scope">
-              <PeopleAltOutlinedIcon />
-              <p>Public</p>
-              <ExpandMore />
+            <input
+              type="range"
+              id={"slider"}
+              min={0}
+              max={100}
+              step={1}
+              // value={state} // don't set value from state
+              defaultValue={progress} // but instead pass state value as default value
+              onInput={handleSlider} // only set state when handle is released
+            />
+            <h5>{progress + "%"}</h5>
             </div>
+
           </div>
+          
           <div className="modal__Field">
             <Input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               type="text"
-              placeholder="Start your question with 'What', 'How', 'Why', etc. "
+              placeholder="Title your progress"
             />
             <div className="modal__fieldLink">
-              <Link />
-              <input
-                value={inputUrl}
-                onChange={(e) => setInputUrl(e.target.value)}
-                type="text"
-                placeholder="Optional: inclue a link that gives context"
-              ></input>
+              <textarea id="progress" rows="15" onChange={(e) => setInputContent(e.target.value)}></textarea>
             </div>
           </div>
           <div className="modal__buttons">
+            <select name="Categories" id="selectList" onChange={(e) => setInputTag(e.target.value)}>
+            {Object.keys(tagMap).map((key) => (
+                <option value={key}> {key} </option>
+              ))}
+            </select>
+            <div class="slidecontainer">
+        
+            </div>
+            <input type="file" accept="image/*" multiple = {false} onChange={(e) => setImage(e.target.files[0])} />
+            
             <button className="cancle" onClick={() => setIsModalOpen(false)}>
               Cancel
             </button>
             <button type="sumbit" onClick={handleQuestion} className="add">
-              Add Question
+              Post
             </button>
           </div>
         </Modal>
